@@ -71,7 +71,12 @@ WebDriver driver = new ChromeDriver();
 		
 		
 		
-//6. 		
+////6. 		WebElement clickHold =driver.findElement(By.id("hold-target"));    
+//   	    
+//    action.scrollToElement(clickHold).build().perform();	
+//    
+//	action.clickAndHold(clickHold).build().perform();
+//	 //Thread.sleep(2000);
 		
 		
 		
