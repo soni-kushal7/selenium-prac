@@ -23,9 +23,9 @@ WebDriver driver = new ChromeDriver();
 		
 		
 	
-		//driver.get("https://automationwithpiyush.vercel.app/actions.html");
+		driver.get("https://automationwithpiyush.vercel.app/actions.html");
 		
-		driver.get("file:///C:/Users/kushal_verma/git/basic-sel/seleniumjava/src/test/java/Action_Class/Action.html");
+		//driver.get("file:///C:/Users/kushal_verma/git/basic-sel/seleniumjava/src/test/java/Action_Class/Action.html");
 		
 		Actions action = new Actions(driver);
 
@@ -62,27 +62,42 @@ WebDriver driver = new ChromeDriver();
 //5. clickAndHold(element)
 		
 		
-	    WebElement clickHold =driver.findElement(By.id("hold-target"));    
-	   	    
-	    action.scrollToElement(clickHold).build().perform();	
-	    
-		action.clickAndHold(clickHold).build().perform();
-		 //Thread.sleep(2000);
-		
-		
-		
-////6. 		WebElement clickHold =driver.findElement(By.id("hold-target"));    
-//   	    
-//    action.scrollToElement(clickHold).build().perform();	
-//    
-//	action.clickAndHold(clickHold).build().perform();
-//	 //Thread.sleep(2000);
+//	    WebElement clickHold =driver.findElement(By.id("hold-target"));    
+//	   	    
+//	    action.scrollToElement(clickHold).build().perform();	
+//	    
+//		action.clickAndHold(clickHold).build().perform();
+//		 //Thread.sleep(2000);
 		
 		
 		
 		
 		
+//6. 	relesase(element)     action.release(clickHold).build().perform();	----- not working
 		
+		
+//	7. dragAndDrop(source, dest) 
+	
+	
+	WebElement source =  driver.findElement(By.id("drag-source"));
+	
+	WebElement dest = driver.findElement(By.id("drop-target"));
+		
+	action.dragAndDrop(source, dest).build().perform();
+		
+		
+		
+// 8. scrollByAmount(x, y)  or scrollToElement(element)
+		
+		action.scrollByAmount(0, 100);
+		 Thread.sleep(2000);
+		
+		action.scrollByAmount(0, 100);
+		 Thread.sleep(2000);
+		 
+		action.scrollByAmount(0, 100);
+		 Thread.sleep(2000);
+		 
 		
 		// Actions => click()
 		//Actions act = new Actions(driver);

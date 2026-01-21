@@ -3,7 +3,6 @@ package JavaCoding;
 public class ReverseEachWordInSentence {
 
 	public static void main(String[] args) {
-		
 
 		 String str = "I am Kushal Verma";
 	        String[] words = str.split(" ");  // split the sentence into words
@@ -22,16 +21,8 @@ public class ReverseEachWordInSentence {
 	        }
 
 	        System.out.println(result.trim());
-		
-		
-	
 	        
 	        
-	        
-	        
-	        
-	        
-		
 		
 		
 	}
