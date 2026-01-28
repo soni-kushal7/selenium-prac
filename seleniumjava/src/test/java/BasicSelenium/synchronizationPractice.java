@@ -42,7 +42,7 @@ public class synchronizationPractice {
 		unlockDisplay.click();
 		
 		Actions act = new Actions(driver);
-		act.scrollToElement(unlockDisplay);
+		act.scrollToElement(unlockDisplay).build().perform();
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		WebElement enterText= wait.until(ExpectedConditions.elementToBeClickable(By.id("target-display")));
