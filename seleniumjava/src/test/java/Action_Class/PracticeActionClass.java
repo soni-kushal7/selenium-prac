@@ -130,8 +130,6 @@ public class PracticeActionClass {
 //		act.moveToElement(hover1).moveByOffset(50, 0).click().build().perform();
 		
 	
-		
-
 	}
 
 }
