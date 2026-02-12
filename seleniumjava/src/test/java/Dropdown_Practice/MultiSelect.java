@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 
-public class Practice2 {
+public class MultiSelect {
 
 	public static void main(String[] args) throws IOException {
 		
@@ -48,16 +48,6 @@ WebDriver driver = new ChromeDriver();
 		    System.out.println(getText);
 		
 		}
-		
-	
-		TakesScreenshot tks = (TakesScreenshot) driver;
-		File source = tks.getScreenshotAs(OutputType.FILE);
-		String  realPath = "./errorshots/dummy.png";
-		File destination = new File(realPath);
-		FileHandler.copy(source, destination);
-		
-		
-		
 		
 		
 	}
