@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
     <title>Date Picker Practice</title>
 
     <!-- jQuery CDN -->
@@ -15,14 +16,31 @@
 
     <script>
         $( function() {
-            // Type 3 - jQuery Date Picker
+
+            // Type 3 - Basic jQuery Date Picker
             $("#jqueryDate").datepicker();
 
-            // Type 5 - jQuery Date Picker with Month & Year Navigation
+            // Type 5 - Calendar with Month & Year Dropdown
             $("#calendarNav").datepicker({
                 changeMonth: true,
                 changeYear: true
             });
+
+            // Type 6 - From Date & To Date (Date Range Picker)
+            $("#fromDate").datepicker({
+                dateFormat: "dd-mm-yy",
+                onSelect: function(selectedDate) {
+                    $("#toDate").datepicker("option", "minDate", selectedDate);
+                }
+            });
+
+            $("#toDate").datepicker({
+                dateFormat: "dd-mm-yy",
+                onSelect: function(selectedDate) {
+                    $("#fromDate").datepicker("option", "maxDate", selectedDate);
+                }
+            });
+
         });
     </script>
 
@@ -62,6 +80,7 @@
     <!-- ============================= -->
     <div class="section">
         <h2>Type 4: Dropdown Based Date Picker (DOB Style)</h2>
+
         <label>Day:</label>
         <select id="day">
             <option>1</option>
@@ -69,6 +88,12 @@
             <option>3</option>
             <option>4</option>
             <option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+	        <option>11</option>
         </select>
 
         <label>Month:</label>
@@ -76,13 +101,22 @@
             <option>January</option>
             <option>February</option>
             <option>March</option>
+			<option>April</option>
+			<option>May</option>
+			<option>June</option>
+	        <option>August</option>
         </select>
 
         <label>Year:</label>
         <select id="year">
-            <option>2022</option>
-            <option>2023</option>
+			
+			<option>2020</option>
+			<option>2021</option>
+			<option>2022</option>
+			<option>2023</option>
             <option>2024</option>
+            <option>2025</option>
+            <option>2026</option>
         </select>
     </div>
 
@@ -91,6 +125,17 @@
         <h2>Type 5: Calendar with Month & Year Navigation</h2>
         <label>Select Date:</label><br>
         <input type="text" id="calendarNav">
+    </div>
+
+    <!-- ============================= -->
+    <div class="section">
+        <h2>Type 6: From Date - To Date (Date Range Picker)</h2>
+
+        <label>From Date:</label><br>
+        <input type="text" id="fromDate"><br><br>
+
+        <label>To Date:</label><br>
+        <input type="text" id="toDate">
     </div>
 
 </body>
