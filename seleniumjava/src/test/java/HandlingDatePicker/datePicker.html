@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <title>Date Picker Practice</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" 
+          href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+    <!-- jQuery UI JS -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script>
+        $( function() {
+
+            // Type 3 - Basic jQuery Date Picker
+            $("#jqueryDate").datepicker();
+
+            // Type 5 - Calendar with Month & Year Dropdown
+            $("#calendarNav").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+
+            // Type 6 - From Date & To Date (Date Range Picker)
+            $("#fromDate").datepicker({
+                dateFormat: "dd-mm-yy",
+                onSelect: function(selectedDate) {
+                    $("#toDate").datepicker("option", "minDate", selectedDate);
+                }
+            });
+
+            $("#toDate").datepicker({
+                dateFormat: "dd-mm-yy",
+                onSelect: function(selectedDate) {
+                    $("#fromDate").datepicker("option", "maxDate", selectedDate);
+                }
+            });
+
+        });
+    </script>
+
+    <style>
+        body { font-family: Arial; margin: 30px; }
+        input, select { padding: 5px; margin: 10px 0; }
+        .section { margin-bottom: 40px; }
+        h2 { color: darkblue; }
+    </style>
+</head>
+
+<body>
+
+    <h1>Date Picker Practice Page</h1>
+
+    <!-- ============================= -->
+    <div class="section">
+        <h2>Type 1: Simple HTML5 Date Picker</h2>
+        <label>Select Date:</label><br>
+        <input type="date" id="htmlDate">
+    </div>
+
+    <!-- ============================= -->
+    <div class="section">
+        <h2>Type 2: HTML5 DateTime Picker</h2>
+        <label>Select Date & Time:</label><br>
+        <input type="datetime-local" id="htmlDateTime">
+    </div>
+
+    <!-- ============================= -->
+    <div class="section">
+        <h2>Type 3: jQuery Calendar Date Picker</h2>
+        <label>Select Date:</label><br>
+        <input type="text" id="jqueryDate">
+    </div>
+
+    <!-- ============================= -->
+    <div class="section">
+        <h2>Type 4: Dropdown Based Date Picker (DOB Style)</h2>
+
+        <label>Day:</label>
+        <select id="day">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+	        <option>11</option>
+        </select>
+
+        <label>Month:</label>
+        <select id="month">
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+			<option>April</option>
+			<option>May</option>
+			<option>June</option>
+	        <option>August</option>
+        </select>
+
+        <label>Year:</label>
+        <select id="year">
+			
+			<option>2020</option>
+			<option>2021</option>
+			<option>2022</option>
+			<option>2023</option>
+            <option>2024</option>
+            <option>2025</option>
+            <option>2026</option>
+        </select>
+    </div>
+
+    <!-- ============================= -->
+    <div class="section">
+        <h2>Type 5: Calendar with Month & Year Navigation</h2>
+        <label>Select Date:</label><br>
+        <input type="text" id="calendarNav">
+    </div>
+
+    <!-- ============================= -->
+    <div class="section">
+        <h2>Type 6: From Date - To Date (Date Range Picker)</h2>
+
+        <label>From Date:</label><br>
+        <input type="text" id="fromDate"><br><br>
+
+        <label>To Date:</label><br>
+        <input type="text" id="toDate">
+    </div>
+
+</body>
+</html>

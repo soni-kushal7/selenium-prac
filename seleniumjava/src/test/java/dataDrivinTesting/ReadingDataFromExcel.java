@@ -14,9 +14,6 @@ public class ReadingDataFromExcel {
 		
 		// Excel File----Workbook---Steet---rows----cell
 			
-
-		
-		
 		
 		
 		FileInputStream file1 = new FileInputStream(System.getProperty("user.dir")+ "\\testData\\data.xlsx");
