@@ -12,7 +12,7 @@ import org.openqa.selenium.io.FileHandler;
 
 public class ScreenShot {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		
 		WebDriver driver = new ChromeDriver();  //upcasting		
@@ -21,6 +21,7 @@ public class ScreenShot {
         
         driver.get("https://automationwithpiyush.vercel.app/screenshots.html");
 		
+        
 		
 // 1> downcasting
         

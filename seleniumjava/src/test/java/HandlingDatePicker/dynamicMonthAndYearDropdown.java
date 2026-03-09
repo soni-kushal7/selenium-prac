@@ -12,7 +12,7 @@ public class dynamicMonthAndYearDropdown {
 		
 /*
  
- Lodgic ---->
+ Logic ---->
  
  if expected month < current month then past month (click on back button)
              January < feb 
