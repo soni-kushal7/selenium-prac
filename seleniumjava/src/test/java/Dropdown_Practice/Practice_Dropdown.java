@@ -29,11 +29,6 @@ public class Practice_Dropdown {
 	     WebElement countryDD = driver.findElement(By.id("country"));
 	     
 	     Select selCountry = new Select(countryDD);
-	   
-	     
-	     selCountry.selectByVisibleText("India");
-	     
-	     
 	     
 	    List<WebElement> selOption= selCountry.getAllSelectedOptions();
 		
