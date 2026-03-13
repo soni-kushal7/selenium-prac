@@ -21,7 +21,7 @@ WebDriver driver = new ChromeDriver();
 		
 		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		
-		
+		//tyesr
 	
 		driver.get("https://automationwithpiyush.vercel.app/actions.html");
 		
