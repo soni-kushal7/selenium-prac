@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Controls Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f6f8;
+    }
+    h2 {
+      color: #333;
+    }
+    #message {
+      font-weight: bold;
+      color: green;
+      margin-top: 15px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #container {
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 300px;
+      border-radius: 6px;
+      background-color: #fff;
+    }
+    input[type="text"] {
+      width: 200px;
+      padding: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Dynamic Controls Practice</h2>
+
+  <div id="container">
+    <div id="checkboxSection">
+      <input type="checkbox" id="dynamicCheckbox"> I agree<br>
+      <button id="toggleCheckbox">Remove Checkbox</button>
+    </div>
+
+    <hr>
+
+    <div id="inputSection">
+      <input type="text" id="dynamicInput" placeholder="Type something..." disabled>
+      <br>
+      <button id="toggleInput">Enable Input</button>
+    </div>
+
+    <p id="message"></p>
+  </div>
+
+  <script>
+    const checkboxSection = document.getElementById('checkboxSection');
+    const toggleCheckbox = document.getElementById('toggleCheckbox');
+    const message = document.getElementById('message');
+
+    const input = document.getElementById('dynamicInput');
+    const toggleInput = document.getElementById('toggleInput');
+
+    // Simulate removing/adding checkbox asynchronously
+    toggleCheckbox.addEventListener('click', function () {
+      message.textContent = 'Processing...';
+      toggleCheckbox.disabled = true;
+
+      setTimeout(() => {
+        if (document.getElementById('dynamicCheckbox')) {
+          document.getElementById('dynamicCheckbox').remove();
+          toggleCheckbox.textContent = 'Add Checkbox';
+          message.textContent = 'Checkbox removed!';
+        } else {
+          const newCheckbox = document.createElement('input');
+          newCheckbox.type = 'checkbox';
+          newCheckbox.id = 'dynamicCheckbox';
+          checkboxSection.insertBefore(newCheckbox, toggleCheckbox);
+          message.textContent = 'Checkbox added!';
+          toggleCheckbox.textContent = 'Remove Checkbox';
+        }
+        toggleCheckbox.disabled = false;
+      }, 2000); // Simulate 2s delay (async)
+    });
+
+    // Simulate enabling/disabling input field asynchronously
+    toggleInput.addEventListener('click', function () {
+      message.textContent = 'Processing...';
+      toggleInput.disabled = true;
+
+      setTimeout(() => {
+        if (input.disabled) {
+          input.disabled = false;
+          message.textContent = 'Input field enabled!';
+          toggleInput.textContent = 'Disable Input';
+        } else {
+          input.disabled = true;
+          message.textContent = 'Input field disabled!';
+          toggleInput.textContent = 'Enable Input';
+        }
+        toggleInput.disabled = false;
+      }, 2000); // Simulate 2s delay
+    });
+  </script>
+
+</body>
+</html>

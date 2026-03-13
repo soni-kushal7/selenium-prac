@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form>
+
+        <div>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <span></span>
+            <small>Enter your full name</small>
+        </div>
+        <br>
+
+        <div>
+            <label for="mobile">Mobile Number:</label><br>
+            <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required>
+            <span></span>
+            <small>10-digit mobile number</small>
+        </div>
+        <br>
+
+        <div>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter email address" required>
+            <span></span>
+            <small>Example: abc@gmail.com</small>
+        </div>
+        <br>
+
+        <div>
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+            <span></span>
+            <small>Current residential address</small>
+        </div>
+        <br>
+
+        <div>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+            <span></span>
+            <small>Minimum 8 characters</small>
+        </div>
+        <br>
+
+        <div>
+            <label for="confirmPassword">Confirm Password:</label><br>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+            <span></span>
+            <small>Must match password</small>
+        </div>
+        <br>
+
+        <!-- Radio Buttons -->
+        <div>
+            <label>Gender:</label><br>
+
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+
+            <input type="radio" id="custom" name="gender" value="custom">
+            <label for="custom">Custom</label>
+
+            <span></span>
+            <small>Select your gender</small>
+        </div>
+        <br>
+
+        <div>
+            <button type="submit">Register</button>
+            <span></span>
+            <small>Click to submit form</small>
+        </div>
+
+    </form>
+
+</body>
+</html>

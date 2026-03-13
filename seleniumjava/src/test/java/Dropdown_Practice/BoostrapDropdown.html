@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Demo</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+    body {
+      margin: 50px;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      color: #004aad;
+      font-weight: bold;
+    }
+
+    .dropdown-menu {
+      padding: 15px;
+      width: 250px;
+    }
+
+    .dropdown-header {
+      font-weight: bold;
+      color: #007bff;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .checkbox label {
+      display: block;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .checkbox input {
+      margin-right: 8px;
+    }
+
+    .btn-multiselect {
+      width: 200px;
+      text-align: left;
+    }
+
+    .caret {
+      float: right;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Bootstrap Demo</h2>
+    <p><strong>Output</strong></p>
+
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle btn-multiselect" type="button" data-toggle="dropdown">
+        HTML, CSS <span class="caret"></span>
+      </button>
+
+      <ul class="dropdown-menu">
+        <li class="dropdown-header">Web Development</li>
+        <li class="checkbox"><label><input type="checkbox" value="jQuery"> jQuery</label></li>
+        <li class="checkbox"><label><input type="checkbox" value="Bootstrap"> Bootstrap</label></li>
+        <li class="checkbox"><label><input type="checkbox" value="HTML" checked> HTML</label></li>
+        <li class="checkbox"><label><input type="checkbox" value="CSS" checked> CSS</label></li>
+        <li class="checkbox"><label><input type="checkbox" value="Angular"> Angular</label></li>
+
+        <li class="dropdown-header">Programming Languages</li>
+        <li class="checkbox"><label><input type="checkbox" value="Java"> Java</label></li>
+        <li class="checkbox"><label><input type="checkbox" value="C#"> C#</label></li>
+        <li class="checkbox"><label><input type="checkbox" value="Python"> Python</label></li>
+
+        <li class="dropdown-header">Databases</li>
+        <li class="checkbox"><label><input type="checkbox" value="MySQL"> MySQL</label></li>
+        <li class="checkbox"><label><input type="checkbox" value="Oracle"> Oracle</label></li>
+        <li class="checkbox"><label><input type="checkbox" value="MS SQL Server"> MS SQL Server</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Optional: dynamically update button text when items are selected
+    $('input[type="checkbox"]').on('change', function() {
+      let selected = [];
+      $('input[type="checkbox"]:checked').each(function() {
+        selected.push($(this).val());
+      });
+      if (selected.length > 0) {
+        $('.btn-multiselect').html(selected.join(', ') + ' <span class="caret"></span>');
+      } else {
+        $('.btn-multiselect').html('Select Options <span class="caret"></span>');
+      }
+    });
+  </script>
+</body>
+</html>
